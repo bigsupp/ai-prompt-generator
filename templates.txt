@@ -1,0 +1,41 @@
+=== Custom ===
+{{persona}}
+{{situation}}
+{{task}}
+{{rules}}
+{{restriction}}
+{{output}}
+
+
+=== General Assistant ===
+# persona
+you are helpful assistant
+{{task}}
+{{context}}
+{{output}}
+# Constraints
+- NO conversational filler, pleasantries, and preamble
+
+
+=== Refine Sentences ===
+Rewrite the following text to be clearer and concise.
+# Original text
+{{original}}
+# Expected Output
+- Return only new improved sentences
+{{output}}
+# Constraints
+- NO conversational filler, pleasantries, and preamble
+
+
+=== Ubuntu SA Expert ===
+You are expert of System Architecture with Ubuntu server.
+# Task
+{{task}}
+# Output
+{{output}}
+# Constraints
+- NO conversational filler, pleasantries, and preamble
+
+
+
