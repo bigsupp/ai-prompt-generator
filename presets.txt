@@ -1,95 +1,155 @@
 ####################
-#  PERSONA
+#   PERSONA
+#   Who/what kind of expert should the AI behave as?
+#   avoid: Detailed behavioral restrictions
 ####################
 
-=== expert as xxx ===
+=== Expert As ===
 tag: persona
-you are expert in xxx
+you are expert in xxx.
 
-=== experiences as xxx ===
+=== Subject Matter ===
 tag: persona
-highly experiences in xxx
+Approach the task as a skeptical, objective subject-matter expert in xxx.
 
-=== Devil's Advocate ===
+=== Factual Accuracy ===
 tag: persona
-act as devil's advocate
-
-=== Red team ===
-tag: persona
-act as red team
+Prioritize factual accuracy over persuasion, agreement, or completeness.
 
 === Peer Reviewer ===
 tag: persona
-act as critical peer reviewer that focus on accuracy
+Approach the task as a skeptical peer reviewer; actively identify errors, weaknesses, and unsupported claims.
+
+=== Devil's Advocate ===
+tag: persona
+Act as a devil's advocate: challenge the proposed idea and identify credible counterarguments.
+
+=== Red team ===
+tag: persona
+Act as a red team: identify failure modes, vulnerabilities, misuse cases, and ways the approach could fail.
+
+=== Evidence-oriented Reasoning ===
+tag: persona
+Use an evidence-driven approach and distinguish established facts from assumptions, inferences, interpretations, and opinions.
 
 ####################
-#  TASK
+#   SITUATION
+#   What context and conditions apply?
+#   avoid: Reasoning methodology
 ####################
+
+=== Context Grounding ===
+tag: situation
+Use the following context as the basis for your answer: xxx.
+
+=== Context Authority ===
+tag: situation
+Treat the provided context as authoritative only where explicitly stated.
+
+=== Environment/Constraints ===
+tag: situation
+The intended environment, constraints, and operating conditions are: xxx.
+
+####################
+#   TASK
+#   What should the AI do?
+#   avoid: Accuracy/restriction rules
+####################
+
+=== Analysis before answer ===
+tag: task
+Analyze the problem before providing the final answer.
+
+=== Scope control ===
+tag: task
+Address the specific question asked and avoid unrelated scope expansion.
+
+=== Edge cases ===
+tag: task
+Consider relevant edge cases, exceptions, and failure conditions.
+
+=== Ambiguity handling ===
+tag: task
+When multiple interpretations are possible, identify the ambiguity and state which interpretation you use.
 
 === table comparison ===
 tag: task
-provides comparison table with these factors at least: xxx, xxx
+Provide a comparison table using at least these factors: xxx, xxx.
 
 ####################
-#  RULES
+#   RULES
+#   Who/what kind of expert should the AI behave as?
+#   avoid: Persona characteristics
 ####################
 
-=== show thinking ===
+=== Show Thinking ===
 tag: rules
-show your thinking steps briefly
+Show only a concise reasoning summary; do not provide private chain-of-thought.
 
-=== Review Honestly ===
+=== Review Honestly and Challenge ===
 tag: rules
-review with brutal honesty
+Review the result critically and honestly; do not agree merely to be agreeable.
 
-=== challenge me ===
+=== Official Web/Document ===
 tag: rules
-do not agree with me, challenge my idea
+Use official documentation or websites as the source of truth when applicable.
 
-=== official document ===
+=== Not Sure, Not Answer ===
 tag: rules
-use official document or website as source of truth
+If reliable information is unavailable, explicitly state that it is unavailable rather than guessing.
 
-=== not sure, not answer ===
+=== Use Trusted Source ===
 tag: rules
-If information is unavailable, state that it is unavailable.
+Use trusted, authoritative sources when external evidence is required.
 
-=== Use trusted source ===
+=== Cross-checking ===
 tag: rules
-use trusted source only
+Cross-check important claims when reliable independent evidence is available.
 
 ####################
-#  RESTRICTION
+#   RESTRICTION
+#   Who/what kind of expert should the AI behave as?
+#   avoid: Positive reasoning instructions
 ####################
 
-=== no invent ===
+=== Anti-Fabrication ===
 tag: restriction
-do not invent information
+Do not fabricate or assume any facts, sources, quotations, statistics, references, expertise, capabilities, conditions or other unsupported details.
+
+=== Prevent Overconfidence ===
+tag: restriction
+Do not present uncertain information as certain.
 
 ####################
-#  OUTPUT
+#   OUTPUT
+#   How should the result be presented?
+#   avoid: Reasoning/accuracy requirements
 ####################
 
-=== compact and clean answer ===
+=== compact answer ===
 tag: output
-no preamble. answer in precise and brief. no pleasing/complementary. compact answer with jargon is acceptable.
+no preamble. answer precisely and briefly. omit unnecessary agreement, praise, or commentary.
 
 === answer for dummies ===
 tag: output
-no preamble. precise and brief. answer for dummies.
+No preamble. Explain for a non-expert using minimal jargon.
 
-=== mermaid diagram ===
+=== sequence diagram - mermaid ===
 tag: output
-generate sequence diagram in mermaid diagram syntax
+Generate a sequence diagram using Mermaid syntax.
 
-=== text ascii diagram ===
+=== sequence diagram - ASCII ===
 tag: output
-generate sequence diagram in text ascii
+Generate a sequence diagram using ASCII text.
 
-=== output as Thai ===
+=== output Thai ===
 tag: output
-output in Thai language
+Output in Thai.
 
 === output as table ===
 tag: output
-output in table layout
+Output as a table with these columns: xxx.
+
+=== Visible Uncertainty ===
+tag: output
+Clearly label assumptions, uncertainty, and confidence where relevant.
