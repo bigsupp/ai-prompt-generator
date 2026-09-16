@@ -101,6 +101,14 @@ function autoResizeOutput() {
   output.style.height = `${output.scrollHeight}px`;
 }
 
+function normalizeGeneratedPrompt(text) {
+  return text
+    .replace(/\r\n?/g, '\n')
+    .replace(/[ \t]+\n/g, '\n')
+    .replace(/\n{2,}/g, '\n')
+    .trim();
+}
+
 function escapeHtml(value) {
   return value
     .replace(/&/g, '&amp;')
@@ -298,7 +306,7 @@ function generatePrompt() {
   const pretext = preEnabled && preValue ? `${preValue}\n\n` : '';
   const posttext = postEnabled && postValue ? `\n\n${postValue}` : '';
 
-  output.value = pretext + generated + posttext;
+  output.value = normalizeGeneratedPrompt(pretext + generated + posttext);
   autoResizeOutput();
 }
 
