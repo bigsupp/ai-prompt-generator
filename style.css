@@ -84,6 +84,12 @@ pre {
   display: flex;
   flex-wrap: wrap;
 }
+.gap-1 {
+  gap: 0.8rem;
+}
+.gap-2 {
+  gap: 1.2rem;
+}
 
 .grid-parent {
   margin: 0 10px;
@@ -96,9 +102,6 @@ pre {
   display: grid;
   gap: 1rem;
   align-items: start;
-  /* transition:
-    box-shadow 0.2s ease,
-    transform 0.2s ease; */
 }
 .col-block {
   background-color: rgb(var(--color-white), 0.8);
